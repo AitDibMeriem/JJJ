@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AIRDIB</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional CSS styles for the "DONE" message */
+    .message-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: none; /* Hide the message initially */
+    }
+
+    .message-content {
+      font-size: 18px;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+    
+   <header
+   
+  <div class="section">
+    <div class="container">
+      <div class="row full-height justify-content-center">
+        <div class="col-12 text-center align-self-center py-5">
+          <div class="section pb-5 pt-5 pt-sm-2 text-center">
+            <h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+            <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+            <label for="reg-log"></label>
+            <div class="card-3d-wrap mx-auto">
+              <div class="card-3d-wrapper">
+                <div class="card-front">
+                  <div class="center-wrap">
+                    <div class="section text-center">
+                      <h4 class="pb-3">Log In</h4>
+                      <div class="form-group">
+                        <input type="email" id="loginEmail" class="form-style" placeholder="Email">
+                        <i class="input-icon uil uil-at"></i>
+                      </div>  
+                      <div class="form-group mt-2">
+                        <input type="password" id="loginPassword" class="form-style" placeholder="Password">
+                        <i class="input-icon uil uil-lock-alt"></i>
+                      </div>
+                      <button id="loginBtn" class="btn mt-4">Login</button>
+                      <div class="form-group mt-2">
+                      
+                      <p class="mb-0 mt-4 text-center"><a id="signinLink" href="#" class="link">Forgot your password?</a></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="center-wrap">
+                    <div class="section text-center">
+                      <h4 class="mb-3 pb-3">Sign Up</h4>
+                      <div class="form-group">
+                        <input type="text" class="form-style" placeholder="Full Name">
+                        <i class="input-icon uil uil-user"></i>
+                      </div>  
+                      <div class="form-group mt-2">
+                        <input type="tel" class="form-style" placeholder="Phone Number">
+                        <i class="input-icon uil uil-phone"></i>
+                      </div>  
+                      <div class="form-group mt-2">
+                        <input type="email" class="form-style" placeholder="Email">
+                        <i class="input-icon uil uil-at"></i>
+                      </div>
+                      <div class="form-group mt-2">
+                        <input type="password" class="form-style" placeholder="Password">
+                        <i class="input-icon uil uil-lock-alt"></i>
+                      </div>
+                      <button id="registerBtn" class="btn mt-4">Register</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Message container for "DONE" message -->
+  <div id="messageContainer" class="message-container">
+    <div class="message-content">DONE</div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Add event listener for the login button
+      document.getElementById('loginBtn').addEventListener('click', function() {
+        var email = document.getElementById('loginEmail').value;
+        var password = document.getElementById('loginPassword').value;
+        
+        // Check if the email and password match the admin credentials
+        if (email === "admin@gmail.com" && password === "admin123") {
+          // Redirect to the admin page
+          window.location.href = "admin.html";
+        } else {
+          // Redirect to the client page
+          window.location.href = "client.html";
+        }
+      });
+
+      // Add event listener for the "Sign In" link
+      document.getElementById('signinLink').addEventListener('click', function() {
+        // Display the "DONE" message
+        var messageContainer = document.getElementById('messageContainer');
+        messageContainer.style.display = "block";
+
+        // Hide the message after 2 seconds
+        setTimeout(function() {
+          messageContainer.style.display = "none";
+        }, 2000);
+      });
+
+      // Add event listener for the "Register" button
+      document.getElementById('registerBtn').addEventListener('click', function() {
+        // Display the "DONE" message
+        var messageContainer = document.getElementById('messageContainer');
+        messageContainer.style.display = "block";
+
+        // Hide the message after 2 seconds
+        setTimeout(function() {
+          messageContainer.style.display = "none";
+        }, 2000);
+      });
+    });
+  </script>
+</body>
+</html>
